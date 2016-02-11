@@ -24,17 +24,6 @@ libraryDependencies ++= Seq(
 )
 
 pomExtra := (
-  <licenses>
-    <license>
-      <name>Apache-2.0</name>
-      <url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
-      <distribution>repo</distribution>
-    </license>
-  </licenses>
-  <scm>
-    <url>git@github.com:guardian/mongodb-auto-discoverygit</url>
-    <connection>scm:git:git@github.com:guardian/mongodb-auto-discovery.git</connection>
-  </scm>
   <developers>
     <developer>
       <id>nlindblad</id>
