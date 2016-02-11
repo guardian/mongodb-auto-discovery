@@ -15,6 +15,8 @@ scmInfo := Some(ScmInfo(
   "scm:git:git@github.com:guardian/mongodb-auto-discovery.git"
 ))
 
+homepage := Some(url("https://github.com/guardian/mongodb-auto-discovery"))
+
 libraryDependencies ++= Seq(
   awsSdk,
   scalaTest,
@@ -29,6 +31,16 @@ publishArtifact in Test := false
 bintrayOrganization := Some("guardian")
 bintrayRepository := "platforms"
 licenses += ("Apache-2.0", url("http://www.apache.org/licenses/LICENSE-2.0.html"))
+
+publishTo := {
+  val nexus = "https://oss.sonatype.org/"
+  if (isSnapshot.value)
+    Some("snapshots" at nexus + "content/repositories/snapshots")
+  else
+    Some("releases"  at nexus + "service/local/staging/deploy/maven2")
+}
+
+pomIncludeRepository := { _ => false }
 
 releaseProcess := Seq[ReleaseStep](
   checkSnapshotDependencies,
