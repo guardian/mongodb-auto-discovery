@@ -1,3 +1,5 @@
+import sbtrelease._
+import ReleaseTransformations._
 import Dependencies._
 
 name := "mongodb-auto-discovery"
@@ -26,3 +28,18 @@ publishArtifact in Test := false
 bintrayOrganization := Some("guardian")
 bintrayRepository := "platforms"
 licenses += ("Apache-2.0", url("http://www.apache.org/licenses/LICENSE-2.0.html"))
+
+releaseProcess := Seq[ReleaseStep](
+  checkSnapshotDependencies,
+  inquireVersions,
+  runClean,
+  runTest,
+  setReleaseVersion,
+  commitReleaseVersion,
+  tagRelease,
+  ReleaseStep(action = Command.process("publishSigned", _)),
+  setNextVersion,
+  commitNextVersion,
+  ReleaseStep(action = Command.process("sonatypeReleaseAll", _)),
+  pushChanges
+)
