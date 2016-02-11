@@ -4,8 +4,6 @@ import Dependencies._
 
 name := "mongodb-auto-discovery"
 
-version := "1.0"
-
 scalaVersion := "2.11.7"
 
 organization := "com.gu"
@@ -22,6 +20,9 @@ libraryDependencies ++= Seq(
   scalaTest,
   scalaCheck
 )
+
+sources in (Compile,doc) := Seq.empty
+publishArtifact in (Compile, packageDoc) := false
 
 publishMavenStyle := true
 publishArtifact in Test := false
