@@ -23,6 +23,27 @@ libraryDependencies ++= Seq(
   scalaCheck
 )
 
+pomExtra := (
+  <url>https://github.com/guardian/mongodb-auto-discovery</url>
+  <licenses>
+    <license>
+      <name>Apache-2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <scm>
+    <url>git@github.com:guardian/mongodb-auto-discoverygit</url>
+    <connection>scm:git:git@github.com:guardian/mongodb-auto-discovery.git</connection>
+  </scm>
+  <developers>
+    <developer>
+      <id>nlindblad</id>
+      <name>Niklas Lindblad</name>
+      <url>https://github.com/guardian/mongodb-auto-discovery</url>
+    </developer>
+  </developers>)
+
 publishMavenStyle := true
 publishArtifact in Test := false
 bintrayOrganization := Some("guardian")
