@@ -9,9 +9,8 @@ Configure [your BinTray credentials](https://github.com/softprops/bintray-sbt#pu
 To get a change published:
 
 1. Make your changes on a branch
-2. Bump up the version number in `build.sbt`
-3. Create a pull request
-4. Make sure the [Travis CI build](https://travis-ci.org/guardian/mongodb-auto-discovery) passes
-5. Get your pull request reviewed
-6. Merge in to `master`
-7. Publish (from your local machine for now) using `sbt publish`
+2. Create a pull request
+3. Make sure the [Travis CI build](https://travis-ci.org/guardian/mongodb-auto-discovery) passes
+4. Get your pull request reviewed
+5. Merge in to `master`
+6. Release (from your local machine for now) using `sbt release`
