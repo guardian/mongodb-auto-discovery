@@ -1,7 +1,8 @@
 # mongodb-auto-discovery
 
 [![Build Status](https://travis-ci.org/guardian/mongodb-auto-discovery.svg?branch=master)](https://travis-ci.org/guardian/mongodb-auto-discovery)
- [ ![Download](https://api.bintray.com/packages/guardian/platforms/mongodb-auto-discovery/images/download.svg) ](https://bintray.com/guardian/platforms/mongodb-auto-discovery/_latestVersion)
+
+[Releases at Maven Central](https://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22com.gu%22%20AND%20a%3A%22mongodb-auto-discovery_2.11%22)
 
 ## Motivation
 
@@ -11,11 +12,11 @@ Reserving private IP addresses in an AWS VPC is tricky and relying on a privatel
 
 ## Using the library
 
-### Configure SBT to use BinTray
+### Add it as a dependency in `build.sbt`
 
-Set up your project for [resolving dependencies in BinTray](https://github.com/softprops/bintray-sbt#resolving-bintray-artifacts) and add the following resolver:
-
-`resolvers ++= Seq(Resolver.bintrayRepo("guardian", "platforms"))`
+```
+libraryDependencies += "com.gu" %% "mongodb-auto-discovery" % "1.6"
+```
 
 ### Make sure your instances have the right permissions
 
@@ -29,9 +30,7 @@ Your EC2 instances need to be able to read EC2 meta-data in order to find the Mo
 }
 ```
 
-### Use it in your
-
-### Play example
+### Example using the Play framework
 
 ```
 import com.gu.aws.{EC2, EC2DiscoveryService}
